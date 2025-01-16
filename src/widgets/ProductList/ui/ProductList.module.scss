@@ -1,0 +1,23 @@
+.wrapper {
+  padding-top: 36px;
+  padding-bottom: 24px;
+}
+
+.title {
+  margin-bottom: 16px;
+  font-size: var(--font-size-xl);
+  text-align: center;
+
+  @media screen and (max-width: 576px) {
+    font-size: var(--font-size-l);
+  }
+}
+
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(256px, 1fr));
+  justify-items: center;
+  gap: 24px 16px;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}

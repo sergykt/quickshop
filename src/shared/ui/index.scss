@@ -1,5 +1,5 @@
-@import 'normalize.css';
-@import 'variables';
+@use 'normalize.css';
+@use 'variables';
 
 html {
   height: 100%;
@@ -39,14 +39,4 @@ h5,
 h6,
 p {
   margin: 0;
-}
-
-h1 {
-  font-size: var(--font-size-xxl);
-}
-
-@media screen and (max-width: 576px) {
-  h1 {
-    font-size: var(--font-size-xl);
-  }
 }

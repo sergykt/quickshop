@@ -39,3 +39,9 @@ Launch the linter:
 ```bash
 npm run lint
 ```
+
+## Deployment
+
+This landing page is deployed on Vercel.
+
+[https://quickshop-blue.vercel.app/](https://quickshop-blue.vercel.app/)

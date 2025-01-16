@@ -10,15 +10,17 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { productsReducer } from '@/entities/Product';
 import { rtkApi } from '@/shared/api/rtkApi';
 
 const persistConfig = {
   key: 'root',
   storage,
-  whitelist: [],
+  whitelist: ['products'],
 };
 
 const rootReducer = combineReducers({
+  products: productsReducer,
   [rtkApi.reducerPath]: rtkApi.reducer,
 });
 

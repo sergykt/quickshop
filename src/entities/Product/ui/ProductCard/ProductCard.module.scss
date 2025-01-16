@@ -1,0 +1,20 @@
+.cardBody {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-size: var(--font-size-s);
+}
+
+.likeButton {
+  &:hover {
+    color: var(--blue);
+  }
+}
+
+.favorite {
+  color: var(--blue);
+}
