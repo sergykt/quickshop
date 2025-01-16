@@ -1,4 +1,3 @@
-import { useCallback, useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 const getPage = (searchParams: URLSearchParams) => Number(searchParams.get('page')) || 1;
@@ -6,14 +5,9 @@ const getPage = (searchParams: URLSearchParams) => Number(searchParams.get('page
 export const usePagination = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const page = useMemo(() => getPage(searchParams), [searchParams]);
+  const page = getPage(searchParams);
 
-  const setPage = useCallback(
-    (newPage: number) => {
-      setSearchParams({ page: String(newPage) });
-    },
-    [setSearchParams],
-  );
+  const setPage = (newPage: number) => setSearchParams({ page: String(newPage) });
 
   return { page, setPage };
 };

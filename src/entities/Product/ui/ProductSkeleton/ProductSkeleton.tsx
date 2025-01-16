@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { Skeleton } from '@/shared/ui/Skeleton';
 
 export const ProductSkeleton = memo(() => {
-  return <Skeleton width={256} height={400} />;
+  return <Skeleton width={256} height={395} />;
 });
 
 interface UserSkeletonProps {

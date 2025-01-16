@@ -1,11 +1,10 @@
 import { rtkApi } from '@/shared/api/rtkApi';
 import { routes } from '@/shared/api/routes';
-import { type ProductResponse, type ProductQueries } from './types';
+import { type ProductResponse, type ProductQueries, Products } from './types';
 
 const buildUrl = (queries: ProductQueries) => {
-  const { page = 1, name, category } = queries;
+  const { page = 1, limit = 5, name, category } = queries;
   const searchParams = new URLSearchParams();
-  const limit = 5;
 
   searchParams.set('_page', String(page));
   searchParams.set('_limit', String(limit));
@@ -21,9 +20,13 @@ const buildUrl = (queries: ProductQueries) => {
 
 export const productApi = rtkApi.injectEndpoints({
   endpoints: (build) => ({
-    getProducts: build.query<ProductResponse[], ProductQueries>({
+    getProducts: build.query<Products, ProductQueries>({
       query: (queries: ProductQueries) => ({
         url: buildUrl(queries),
+      }),
+      transformResponse: (response: ProductResponse[], meta) => ({
+        items: response,
+        count: Number(meta?.response?.headers.get('X-Total-Count')),
       }),
     }),
   }),

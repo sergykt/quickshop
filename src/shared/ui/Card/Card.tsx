@@ -17,7 +17,7 @@ export const Card: FC<CardProps> = memo((props) => {
     <div className={clsx(styles.card, className)}>
       <h4 className={styles.subtitle}>{subtitle}</h4>
       <div className={styles.image}>
-        <img src={image} alt={title} width='200' height='200' loading='lazy' />
+        <img src={image} alt={title} width='224' height='224' loading='lazy' />
       </div>
       <div className={styles.content}>
         <h3 className={styles.title}>{title}</h3>
