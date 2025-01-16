@@ -17,7 +17,6 @@ export const useProductFilters = () => {
         } else {
           newParams.delete('name');
         }
-        newParams.set('page', '1');
         return newParams;
       });
     },
