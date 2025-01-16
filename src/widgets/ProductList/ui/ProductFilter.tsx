@@ -34,6 +34,7 @@ export const ProductFilter = memo((props: ProductFilterProps) => {
         onChange={onChange}
         className={styles.input}
         placeholder='Enter product name'
+        autoComplete='off'
       />
       <div className={styles.categories}>
         <Button

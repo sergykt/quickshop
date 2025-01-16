@@ -1,7 +1,8 @@
 import { memo } from 'react';
 import { Header } from '@/widgets/Header';
-import { Container } from '@/shared/ui/Container';
 import { ProductList } from '@/widgets/ProductList';
+import { Footer } from '@/widgets/Footer';
+import { Container } from '@/shared/ui/Container';
 
 const MainPage = memo(() => {
   return (
@@ -12,6 +13,7 @@ const MainPage = memo(() => {
           <ProductList />
         </Container>
       </main>
+      <Footer />
     </>
   );
 });
