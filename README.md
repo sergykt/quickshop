@@ -4,6 +4,14 @@
 
 Quickshop is a lightweight and efficient e-commerce platform designed for quick and easy product browsing. The project aims to provide a simple yet functional interface for users to search, filter, and manage their favorite products effortlessly.
 
+## Tech Stack
+
+- **React**
+- **Redux Toolkit**
+- **RTK Query**
+- **JSON Server**
+- **Feature-Sliced Design**
+
 ## Usage
 
 Install all required packages:
