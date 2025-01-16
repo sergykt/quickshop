@@ -14,7 +14,7 @@
     "prepare": "husky",
     "stylelint": "stylelint \"**/*.scss\"",
     "stylelint:fix": "npm run stylelint -- --fix",
-    "server": "json-server --watch -d 400 ./json-server/db.json"
+    "server": "json-server --watch -d 400 db.json"
   },
   "lint-staged": {
     "**/*.{ts,tsx}": [
