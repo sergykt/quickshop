@@ -23,10 +23,10 @@ export const ProductList = memo(() => {
   const pages = Math.ceil(products.count / limit) || 1;
 
   useEffect(() => {
-    if (page > pages || page < 1) {
-      setPage(pages);
+    if ((products.count > 0 && page > pages) || page < 1) {
+      setPage(1);
     }
-  }, [page, pages, setPage]);
+  }, [page, pages, setPage, products.count]);
 
   return (
     <div className={styles.wrapper}>
