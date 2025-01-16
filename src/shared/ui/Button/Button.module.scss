@@ -14,8 +14,10 @@
   transition: all 0.2s ease-in-out;
   user-select: none;
 
-  &:hover {
-    filter: brightness(1.1);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      filter: brightness(1.1);
+    }
   }
 
   &:disabled {

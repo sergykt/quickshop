@@ -11,8 +11,10 @@
 }
 
 .likeButton {
-  &:hover {
-    color: var(--blue);
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: var(--blue);
+    }
   }
 }
 
