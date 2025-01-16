@@ -6,6 +6,7 @@ export const useProductFilters = () => {
 
   const categories = searchParams.getAll('category') ?? [];
   const name = searchParams.get('name') ?? '';
+  const isFavorite = searchParams.get('favorite') === 'true';
 
   const setName = useCallback(
     (newName: string) => {
@@ -22,6 +23,18 @@ export const useProductFilters = () => {
     },
     [setSearchParams],
   );
+
+  const toggleFavorite = useCallback(() => {
+    setSearchParams((prev) => {
+      const newParams = new URLSearchParams(prev);
+      if (isFavorite) {
+        newParams.delete('favorite');
+      } else {
+        newParams.set('favorite', 'true');
+      }
+      return newParams;
+    });
+  }, [isFavorite, setSearchParams]);
 
   const toggleCategory = useCallback(
     (categoryToToggle: string) => {
@@ -46,5 +59,5 @@ export const useProductFilters = () => {
     [setSearchParams],
   );
 
-  return { name, categories, setName, toggleCategory };
+  return { name, categories, isFavorite, setName, toggleCategory, toggleFavorite };
 };

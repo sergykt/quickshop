@@ -10,10 +10,12 @@ export interface ProductFilterProps {
   categories: string[];
   setName: (name: string) => void;
   toggleCategory: (category: string) => void;
+  toggleFavorite: () => void;
+  isFavorite: boolean;
 }
 
 export const ProductFilter = memo((props: ProductFilterProps) => {
-  const { name, categories, setName, toggleCategory } = props;
+  const { name, categories, isFavorite, setName, toggleCategory, toggleFavorite } = props;
   const [inputValue, setInputValue] = useState(name);
 
   const debouncedSetName = useDebounce(setName, 500);
@@ -48,6 +50,9 @@ export const ProductFilter = memo((props: ProductFilterProps) => {
           onClick={() => toggleCategory('phones')}
         >
           Phones
+        </Button>
+        <Button onClick={toggleFavorite} className={clsx({ [styles.disabled]: !isFavorite })}>
+          Favorite
         </Button>
       </div>
     </div>

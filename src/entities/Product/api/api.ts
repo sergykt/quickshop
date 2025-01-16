@@ -3,11 +3,9 @@ import { routes } from '@/shared/api/routes';
 import { type ProductResponse, type ProductQueries, Products } from './types';
 
 const buildUrl = (queries: ProductQueries) => {
-  const { page = 1, limit = 5, name, categories } = queries;
+  const { name, categories } = queries;
   const searchParams = new URLSearchParams();
 
-  searchParams.set('_page', String(page));
-  searchParams.set('_limit', String(limit));
   if (name && name.length > 2) {
     searchParams.set('name_like', name);
   }

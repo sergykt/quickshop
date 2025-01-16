@@ -6,30 +6,34 @@ import styles from './ProductListItems.module.scss';
 
 export interface ProductListItemsProps {
   products: Products;
-  limit: number;
   isFetching: boolean;
+  isFavorite: boolean;
 }
 
 export const ProductListItems: FC<ProductListItemsProps> = memo((props) => {
-  const { products, isFetching, limit } = props;
+  const { products, isFetching, isFavorite } = props;
 
   const favorites = useAppSelector(getFavorites);
 
   if (isFetching) {
     return (
       <div className={styles.products}>
-        <ProductSkeletons count={limit} />
+        <ProductSkeletons count={5} />
       </div>
     );
   }
 
-  if (products?.items.length === 0) {
+  const filteredProducts = products.items.filter((product) => {
+    return isFavorite ? favorites[product.id] : true;
+  });
+
+  if (filteredProducts.length === 0) {
     return <p className={styles.nothing}>No products found</p>;
   }
 
   return (
     <div className={styles.products}>
-      {products.items.map((product) => (
+      {filteredProducts.map((product) => (
         <ProductCard key={product.id} product={product} favorite={favorites[product.id] ?? false} />
       ))}
     </div>

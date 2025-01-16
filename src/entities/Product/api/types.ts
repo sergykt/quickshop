@@ -12,8 +12,6 @@ export interface Products {
 }
 
 export interface ProductQueries {
-  page?: number;
-  limit?: number;
   name?: string;
   categories?: string[];
 }
