@@ -1,21 +1,26 @@
 import { memo, useEffect } from 'react';
 import { useGetProductsQuery } from '@/entities/Product/api/api';
-import { getFavorites, ProductCard, ProductSkeletons } from '@/entities/Product';
-import { useAppSelector } from '@/shared/lib/store/hooks';
 import { Pagination } from '@/shared/ui/Pagination';
 import { usePagination } from '@/shared/lib/pagination';
+import { ProductListItems } from './ProductListItems';
+import { ProductFilter } from './ProductFilter';
 import styles from './ProductList.module.scss';
+import { useProductFilters } from '../lib/useProductFilters';
 
-const limit = 2;
+const limit = 5;
 
 export const ProductList = memo(() => {
   const { page, setPage } = usePagination();
-  const { data: products, isFetching } = useGetProductsQuery({ limit, page });
-  const favorites = useAppSelector(getFavorites);
+  const { name, categories, setName, toggleCategory } = useProductFilters();
+  const { data, isFetching } = useGetProductsQuery({
+    limit,
+    page,
+    name,
+    categories,
+  });
 
-  const pages = Math.ceil((products?.count ?? 1) / limit);
-
-  console.log(page);
+  const products = data ?? { items: [], count: 0 };
+  const pages = Math.ceil(products.count / limit) || 1;
 
   useEffect(() => {
     if (page > pages || page < 1) {
@@ -26,17 +31,13 @@ export const ProductList = memo(() => {
   return (
     <div className={styles.wrapper}>
       <h1 className={styles.title}>Product List</h1>
-      <div className={styles.products}>
-        {!isFetching &&
-          products?.items.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={product}
-              favorite={favorites[product.id] ?? false}
-            />
-          ))}
-        {isFetching && <ProductSkeletons count={limit} />}
-      </div>
+      <ProductFilter
+        name={name}
+        categories={categories}
+        setName={setName}
+        toggleCategory={toggleCategory}
+      />
+      <ProductListItems products={products} limit={limit} isFetching={isFetching} />
       <Pagination page={page} pagesCount={pages} onPageChange={setPage} />
     </div>
   );

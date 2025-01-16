@@ -1,0 +1,32 @@
+.wrapper {
+  width: 100%;
+}
+
+.label {
+  display: inline-block;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: var(--font-size-m);
+  line-height: 1.2;
+  color: var(--black);
+  margin-bottom: 4px;
+}
+
+.input {
+  background-color: var(--gray-light);
+  border-radius: 8px;
+  font-size: var(--font-size-m);
+  border: none;
+  padding: 12px 8px 12px 16px;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+
+  &:focus {
+    outline: 1px solid var(--blue);
+  }
+}
+
+.input[disabled] {
+  opacity: 0.5;
+}

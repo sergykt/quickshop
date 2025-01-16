@@ -2,13 +2,13 @@ import { type FC, memo } from 'react';
 import { GrNext, GrPrevious } from 'react-icons/gr';
 import styles from './Pagination.module.scss';
 
-interface IPaginationProps {
+interface PaginationProps {
   page: number;
   pagesCount: number;
   onPageChange: (page: number) => void;
 }
 
-export const Pagination: FC<IPaginationProps> = memo((props) => {
+export const Pagination: FC<PaginationProps> = memo((props) => {
   const { page, pagesCount, onPageChange } = props;
 
   const toPrevPage = () => onPageChange(page - 1);

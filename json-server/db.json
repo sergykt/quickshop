@@ -2,73 +2,74 @@
   "products": [
     {
       "id": "1",
-      "name": "Apple iPhone 14",
-      "image": "/img/iphone-14.png",
-      "category": "Smartphones",
-      "price": 799
-    },
-    {
-      "id": "2",
-      "name": "Samsung Galaxy S23",
-      "image": "/img/samsung-s23.jpeg",
-      "category": "Smartphones",
-      "price": 749
-    },
-    {
-      "id": "3",
       "name": "Google Pixel 7",
       "image": "/img//google-pixel-7.jpg",
-      "category": "Smartphones",
+      "category": "phones",
       "price": 599
     },
     {
-      "id": "4",
-      "name": "OnePlus 11",
-      "image": "/img//oneplus-11.jpg",
-      "category": "Smartphones",
-      "price": 699
-    },
-    {
-      "id": "5",
+      "id": "2",
       "name": "Xiaomi Mi 13",
       "image": "/img//xiaomi-mi-13.jpeg",
-      "category": "Smartphones",
+      "category": "phones",
       "price": 649
     },
     {
-      "id": "6",
+      "id": "3",
       "name": "Apple MacBook Pro 14",
       "image": "/img//macbook-pro-14.jpg",
-      "category": "Laptops",
+      "category": "laptops",
       "price": 1999
     },
     {
-      "id": "7",
-      "name": "Dell XPS 13",
-      "image": "/img//dell-xps-13.jpeg",
-      "category": "Laptops",
-      "price": 1499
-    },
-    {
-      "id": "8",
+      "id": "4",
       "name": "HP Spectre x360",
       "image": "/img//spectre-x360.jpeg",
-      "category": "Laptops",
+      "category": "laptops",
       "price": 1599
     },
     {
-      "id": "9",
+      "id": "5",
+      "name": "Apple iPhone 14",
+      "image": "/img/iphone-14.png",
+      "category": "phones",
+      "price": 799
+    },
+    {
+      "id": "6",
       "name": "Lenovo ThinkPad X1 Carbon",
       "image": "/img//thinkpad-x1-carbon.jpeg",
-      "category": "Laptops",
+      "category": "laptops",
       "price": 1799
     },
     {
-      "id": "10",
+      "id": "7",
+      "name": "OnePlus 11",
+      "image": "/img//oneplus-11.jpg",
+      "category": "phones",
+      "price": 699
+    },
+    {
+      "id": "7",
       "name": "Asus ROG Zephyrus G14",
       "image": "/img//zephyrus-g14.jpeg",
-      "category": "Laptops",
+      "category": "laptops",
       "price": 1799
+    },
+    {
+      "id": "9",
+      "name": "Samsung Galaxy S23",
+      "image": "/img/samsung-s23.jpeg",
+      "category": "phones",
+      "price": 749
+    },
+
+    {
+      "id": "10",
+      "name": "Dell XPS 13",
+      "image": "/img//dell-xps-13.jpeg",
+      "category": "laptops",
+      "price": 1499
     }
   ]
 }

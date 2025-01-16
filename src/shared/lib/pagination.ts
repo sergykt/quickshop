@@ -1,13 +1,20 @@
+import { useCallback } from 'react';
 import { useSearchParams } from 'react-router-dom';
-
-const getPage = (searchParams: URLSearchParams) => Number(searchParams.get('page')) || 1;
 
 export const usePagination = () => {
   const [searchParams, setSearchParams] = useSearchParams();
 
-  const page = getPage(searchParams);
-
-  const setPage = (newPage: number) => setSearchParams({ page: String(newPage) });
+  const page = Number(searchParams.get('page')) || 1;
+  const setPage = useCallback(
+    (newPage: number) => {
+      setSearchParams((prevParams) => {
+        const newParams = new URLSearchParams(prevParams);
+        newParams.set('page', String(newPage));
+        return newParams;
+      });
+    },
+    [setSearchParams],
+  );
 
   return { page, setPage };
 };
