@@ -3,28 +3,28 @@
     {
       "id": "1",
       "name": "Google Pixel 7",
-      "image": "/img//google-pixel-7.jpg",
+      "image": "/img/google-pixel-7.jpg",
       "category": "phones",
       "price": 599
     },
     {
       "id": "2",
       "name": "Xiaomi Mi 13",
-      "image": "/img//xiaomi-mi-13.jpeg",
+      "image": "/img/xiaomi-mi-13.jpeg",
       "category": "phones",
       "price": 649
     },
     {
       "id": "3",
       "name": "Apple MacBook Pro 14",
-      "image": "/img//macbook-pro-14.jpg",
+      "image": "/img/macbook-pro-14.jpg",
       "category": "laptops",
       "price": 1999
     },
     {
       "id": "4",
       "name": "HP Spectre x360",
-      "image": "/img//spectre-x360.jpeg",
+      "image": "/img/spectre-x360.jpeg",
       "category": "laptops",
       "price": 1599
     },
@@ -38,21 +38,21 @@
     {
       "id": "6",
       "name": "Lenovo ThinkPad X1 Carbon",
-      "image": "/img//thinkpad-x1-carbon.jpeg",
+      "image": "/img/thinkpad-x1-carbon.jpeg",
       "category": "laptops",
       "price": 1799
     },
     {
       "id": "7",
       "name": "OnePlus 11",
-      "image": "/img//oneplus-11.jpg",
+      "image": "/img/oneplus-11.jpg",
       "category": "phones",
       "price": 699
     },
     {
       "id": "8",
       "name": "Asus ROG Zephyrus G14",
-      "image": "/img//zephyrus-g14.jpeg",
+      "image": "/img/zephyrus-g14.jpeg",
       "category": "laptops",
       "price": 1799
     },
@@ -67,7 +67,7 @@
     {
       "id": "10",
       "name": "Dell XPS 13",
-      "image": "/img//dell-xps-13.jpeg",
+      "image": "/img/dell-xps-13.jpeg",
       "category": "laptops",
       "price": 1499
     }
